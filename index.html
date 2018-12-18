@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>NameTest</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div  style="width: 1170px;margin: 0 auto" class="container">
+    <h1>HOW WE PASTE THE INPUT VALUE IN ANOTHER LINE?</h1>
+    <form onsubmit="return false">
+        <label>
+            <input style="width: 100%;height: 30px; font-size: 25px" type="text" id="inputVal">
+        </label>
+        <button type="text" onclick="submitBtn()">SUBMIT</button>
+    </form>
+    <p id="demo"></p>
+
+
+</div>
+
+<script>
+    function submitBtn(){
+        var textnode;
+        var br;
+        var inputValue = document.getElementById('inputVal').value;
+        textnode = document.createTextNode(inputValue);
+        document.getElementById('demo').appendChild(textnode);
+        br = document.createElement('br');
+        document.getElementById('demo').appendChild(br);
+        document.getElementById('inputVal').value = '';
+
+    }
+    document.getElementById('demo').innerHTML = inputValue;
+</script>
+</body>
+</html>
